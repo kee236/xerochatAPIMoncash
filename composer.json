@@ -1,0 +1,25 @@
+{
+    "name": "baouly-nelson/xerochat",
+    "description": "fonctionalite moncash",
+    "type": "library",
+    "require": {
+        "codeigniter4/framework": "^4.5",
+        "midsonlajeanty/php-moncash-sdk": "dev-main"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BaoulyNelson\\Xerochat\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "BaoulyNelson",
+            "email": "elconquistadorbaoulyn@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
