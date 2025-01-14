@@ -155,7 +155,11 @@ $this->fb = new Facebook\Facebook([
 			// array_push($permissions, 'publish_video');
 
 		if($this->CI->config->item('instagram_reply_enable_disable') == '1')
-			array_push($permissions, 'instagram_basic','instagram_manage_comments','instagram_manage_insights','instagram_content_publish','instagram_manage_messages');
+			array_push($permissions, 'instagram_basic',
+'instagram_manage_comments',
+'instagram_manage_insights',
+'instagram_content_publish',
+'instagram_manage_messages');
 
 
 		$loginUrl = $helper->getLoginUrl($redirect_url, $permissions);
@@ -267,7 +271,11 @@ $url = "https://graph.facebook.com/v21.0/debug_token?input_token={$access_token}
 
 		$client_id=$this->app_id;
 		$result=array();
-		$url="https://graph.facebook.com/v10.0/oauth/access_token_info?client_id={$client_id}&access_token={$access_token}";
+
+	/*	$url="https://graph.facebook.com/v10.0/oauth/access_token_info?client_id={$client_id}&access_token={$access_token}";
+*/
+
+$url = "https://graph.facebook.com/v21.0/debug_token?input_token={$access_token}&access_token={$app_id}|{$app_secret}";
 
 		$headers = array("Content-type: application/json");
 
