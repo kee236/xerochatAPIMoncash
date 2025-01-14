@@ -82,12 +82,14 @@ class Fb_rx_login
 				    session_start();
 				}
 		
-				$this->fb = new Facebook\Facebook([
-					'app_id' => $this->app_id, 
-					'app_secret' => $this->app_secret,
-					'default_graph_version' => 'v10.0',
-					'fileUpload'	=>TRUE
-					]);
+$this->fb = new Facebook\Facebook([
+    'app_id' => $this->app_id,
+    'app_secret' => $this->app_secret,
+    'default_graph_version' => 'v21.0',
+    'fileUpload' => true
+]);
+
+				
 			}
 		}
 
@@ -125,11 +127,13 @@ class Fb_rx_login
 			}
 	
 			$this->fb = new Facebook\Facebook([
-				'app_id' => $this->app_id, 
-				'app_secret' => $this->app_secret,
-				'default_graph_version' => 'v10.0',
-				'fileUpload'	=>TRUE
-				]);
+    'app_id' => $this->app_id,
+    'app_secret' => $this->app_secret,
+    'default_graph_version' => 'v21.0',
+    'fileUpload' => true
+]);
+
+
 		}
 		
 	    
@@ -231,7 +235,11 @@ class Fb_rx_login
 		$access_token=$this->user_access_token;
 		$client_id=$this->app_id;
 		$result=array();
-		$url="https://graph.facebook.com/v10.0/oauth/access_token_info?client_id={$client_id}&access_token={$access_token}";
+
+	/*	$url="https://graph.facebook.com/v10.0/oauth/access_token_info?client_id={$client_id}&access_token={$access_token}";
+*/
+
+$url = "https://graph.facebook.com/v21.0/debug_token?input_token={$access_token}&access_token={$app_id}|{$app_secret}";
 
 		$headers = array("Content-type: application/json");
 
